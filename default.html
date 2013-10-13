@@ -6,6 +6,8 @@
 			* { margin: 0; padding: 0; }
 			body {
 				font-family: Calibri;
+				text-align: center;
+				padding: 2em 0;
 			}
 			h1 {
 				font-weight: normal;
@@ -17,11 +19,47 @@
 			ul li {
 				padding: 10px;
 			}
+			ul li:first-child::after {
+				content: '';
+				border-bottom: solid 1px #ccc;
+				display: block;
+				width: 100px;
+				height: 1px;
+				position: relative;
+				left: 50%;
+				margin: 3em 0 1em -50px;
+			}
 			p {
 				margin: 0.5em 0;
 			}
 			a:link, a:active, a:visited {
 				color: #900;
+			}
+			@media (min-width: 500px) and (min-height: 400px) {
+				ul {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					margin: -100px 0 0 -250px;
+					width: 500px;
+					height: 200px;
+				}
+				ul li {
+					width: 250px;
+					height: 200px;
+					padding: 0;
+					float: left;
+				}
+				ul li:first-child::after {
+					border: none;
+					border-left: solid 1px #ccc;
+					width: 0px;
+					position: absolute;
+					left: 250px;
+					top: 50px;
+					height: 100px;
+					margin: 0;
+				}
 			}
 		</style>
 	</head>
